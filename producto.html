@@ -3,98 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Detalle del producto: especificaciones completas, precio y formas de pago.">
-
-    <title>Detalle del Producto | Apple Store</title>
+    <meta name="description" content="Detalle del producto: especificaciones completas, precio y formas de pago">
+    <title>Producto | Apple Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1>Apple Store</h1>
-        <nav aria-label="Navegación principal">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#catalogo">Catálogo</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1><a href="index.html" style="color: var(--primary-blue); text-decoration: none;">Apple Store</a></h1>
+            
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#catalogo">Catálogo</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos..." class="search-input" aria-label="Buscar productos">
+                </div>
+                <a href="#" class="cart-link" aria-label="Carrito de compras">
+                    <div style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="21" r="1"></circle>
+    <circle cx="20" cy="21" r="1"></circle>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+  </svg>
+  <span style="font-weight: bold; font-size: 16px;">0</span>
+</div>
+                </a>
+            </div>
+        </div>
     </header>
 
     <main>
         <nav aria-label="Ruta de navegación">
             <ol>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#catalogo">Catálogo</a></li>
-                <li aria-current="page">Detalle del producto</li>
+                <li class="current"><a href="#">Producto</a></li>
             </ol>
         </nav>
 
-        <article aria-label="Ficha del producto">
-            <h2>MacBook Air M3</h2>
-            <p>Notebook ultradelgado con chip M3, 13 pulgadas.</p>
-
-            <section aria-label="Especificaciones técnicas">
-                <h3>Especificaciones técnicas</h3>
-                <table>
-                    <caption>Especificaciones de MacBook Air M3</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Característica</th>
-                            <th scope="col">Detalle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Pantalla</th>
-                            <td>Liquid Retina 13,6" (2560 x 1664)</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Chip</th>
-                            <td>Apple M3, CPU 8 núcleos, GPU hasta 10 núcleos</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Memoria RAM</th>
-                            <td>8 GB unificada (configurable a 16/24 GB)</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Almacenamiento</th>
-                            <td>256 GB SSD (configurable hasta 2 TB)</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Batería</th>
-                            <td>Hasta 18 horas de reproducción de video</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Puertos</th>
-                            <td>2 x Thunderbolt / USB 4, MagSafe 3, jack de audio</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sistema operativo</th>
-                            <td>macOS Sonoma</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section aria-label="Precio y compra">
-                <h3>Precio y formas de pago</h3>
-                <p><strong>Precio: $1.199.000</strong></p>
-                <p>Hasta 12 cuotas sin interés de $99.916,67</p>
-                <p><a href="#" role="button">Agregar al carrito</a></p>
-            </section>
-
-            <section aria-label="Descripción del producto">
-                <h3>Descripción</h3>
-                <p>
-                    La MacBook Air M3 combina un diseño ultradelgado con el rendimiento del
-                    chip M3 de Apple. Ideal para trabajo, estudio y creatividad, con una
-                    batería que dura todo el día y una pantalla Liquid Retina espectacular.
-                </p>
-            </section>
-
-            <p><a href="index.html#macbook">&larr; Volver al catálogo</a></p>
+        <!-- Contenedor donde se mostrará la información del producto -->
+        <article aria-label="Ficha del producto" id="producto-container">
+            <!-- Aquí se insertará el contenido dinámicamente -->
         </article>
-
     </main>
 
     <footer id="contacto">
@@ -108,5 +64,169 @@
         </nav>
     </footer>
 
+    <script>
+        // Datos de todos los productos
+        const productos = {
+            macbook: {
+                nombre: "MacBook Air M3",
+                precio: "$1.199.000",
+                descripcion: "Notebook ultradelgado con chip M4, 13 pulgadas.",
+                especificaciones: [
+                    ["Pantalla", "Liquid Retina 13,6\" (2560 x 1664)"],
+                    ["Chip", "Apple M3, CPU 8 núcleos, GPU hasta 10 núcleos"],
+                    ["Memoria RAM", "8 GB unificada (configurable a 16/24 GB)"],
+                    ["Almacenamiento", "256 GB SSD (configurable hasta 2 TB)"],
+                    ["Batería", "Hasta 18 horas de reproducción de video"],
+                    ["Puertos", "2 x Thunderbolt / USB 4, MagSafe 3, jack de audio"],
+                    ["Sistema operativo", "macOS Sonoma"]
+                ],
+                imagen: "img/apple-macbook.jpg"
+            },
+            iphone: {
+                nombre: "iPhone 15 Pro",
+                precio: "$1.599.000",
+                descripcion: "Smartphone con chip A17 Pro, cámara de 48MP y titanio.",
+                especificaciones: [
+                    ["Pantalla", "Super Retina XDR 6,1\", Always‑On, 120 Hz"],
+                    ["Chip", "Apple A17 Pro de 3 nm"],
+                    ["Memoria RAM", "8 GB unificada"],
+                    ["Almacenamiento", "128 GB / 256 GB / 512 GB"],
+                    ["Batería", "Hasta 23 horas de reproducción de video"],
+                    ["Puertos", "USB‑C ( velocidad USB 3.1)"],
+                    ["Sistema operativo", "iOS 17"]
+                ],
+                imagen: "img/iphone.jpg"
+            },
+            ipad: {
+                nombre: "iPad Air",
+                precio: "$999.000",
+                descripcion: "Tablet con chip M2, pantalla Liquid Retina de 11 pulgadas.",
+                especificaciones: [
+                    ["Pantalla", "Liquid Retina 10,9\" (2360 x 1640)"],
+                    ["Chip", "Apple M2"],
+                    ["Memoria RAM", "8 GB unificada"],
+                    ["Almacenamiento", "64 GB / 256 GB"],
+                    ["Batería", "Hasta 10 horas de reproducción de video"],
+                    ["Puertos", "USB‑C con soporte video"],
+                    ["Sistema operativo", "iPadOS 17"]
+                ],
+                imagen: "img/ipad-air.jpg"
+            },
+            watch: {
+                nombre: "Apple Watch Series 9",
+                precio: "$549.000",
+                descripcion: "Reloj inteligente con GPS y detección de accidentes.",
+                especificaciones: [
+                    ["Pantalla", "Siempre activa, 41 mm o 44 mm, retina LTPO OLED"],
+                    ["Chip", "S7 SiP con doble núcleo"],
+                    ["Memoria RAM", "1 GB"],
+                    ["Batería", "Hasta 18 horas"],
+                    ["Resistencia al agua", "50 m (nado en piscina o océano)"],
+                    ["Sistema operativo", "watchOS 10"]
+                ],
+                imagen: "img/apple-watch.jpg"
+            },
+            airpods: {
+                nombre: "AirPods Pro 2",
+                precio: "$349.000",
+                descripcion: "Auriculares inalámbricos con cancelación activa de ruido.",
+                especificaciones: [
+                    ["Cancelación activa de ruido", "Hasta 2 x más eficaz"],
+                    ["Transparencia", "Modo transparencia"],
+                    ["Carga", "Carga USB‑C rápida"],
+                    ["Autonomía", "Hasta 6 horas con ANC activado"],
+                    ["Resistencia al agua", "IPX4"],
+                    ["Chip", "H2"]
+                ],
+                imagen: "img/airpods-pro2.jpg"
+            },
+            accesorios: {
+                nombre: "Magic Mouse",
+                precio: "$129.000",
+                descripcion: "Mouse inalámbrico recargable con Multi-Touch.",
+                especificaciones: [
+                    ["Conectividad", "Bluetooth 5.0"],
+                    ["Superficie", "Cristal esmerilado"],
+                    ["Batería", "Hasta 1 mes de autonomía"],
+                    ["Carga", "Cable USB‑C"],
+                    ["Botones", "Área táctil Multi‑Touch"],
+                    ["Sistema compatible", "macOS 13 o versión posterior, iPadOS 16 o versión posterior"]
+                ],
+                imagen: "img/magic-mouse.jpg"
+            }
+        };
+
+        // Función para obtener parámetro de la URL
+        function obtenerParametro(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        // Función para mostrar el producto
+        function mostrarProducto(id) {
+            const producto = productos[id];
+            const container = document.getElementById('producto-container');
+            
+            if (!producto) {
+                container.innerHTML = '<p>Producto no encontrado</p>';
+                return;
+            }
+            
+            // Generar la tabla de especificaciones
+            let tablaHTML = '';
+            producto.especificaciones.forEach(([caracteridad, detalle]) => {
+                tablaHTML += `
+                    <tr>
+                        <th scope="row">${caracteridad}</th>
+                        <td>${detalle}</td>
+                    </tr>
+                `;
+            });
+            
+            // Insertar todo el contenido HTML
+            container.innerHTML = `
+                <h2 class="product-title">${producto.nombre}</h2>
+                <p class="product-desc">${producto.descripcion}</p>
+                
+                <section aria-label="Especificaciones técnicas">
+                    <h3>Especificaciones técnicas</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Característica</th>
+                                <th scope="col">Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tablaHTML}
+                        </tbody>
+                    </table>
+                </section>
+                
+                <section aria-label="Precio y compra">
+                    <h3>Precio y formas de pago</h3>
+                    <p><strong>${producto.precio}</strong></p>
+                    <p>Hasta 12 cuotas sin interés de ${Math.round(parseFloat(producto.precio) / 12).toLocaleString()}</p>
+                    <p><a href="#" role="button">Agregar al carrito</a></p>
+                </section>
+                
+                <section aria-label="Descripción del producto">
+                    <h3>Descripción</h3>
+                    <p>${producto.descripcion}</p>
+                </section>
+            `;
+        }
+
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const productoId = obtenerParametro('id');
+            if (productoId) {
+                mostrarProducto(productoId);
+            } else {
+                // Si no hay parámetro, mostrar el primero (macbook por defecto)
+                mostrarProducto('macbook');
+            }
+        });
+    </script>
 </body>
 </html>
