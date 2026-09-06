@@ -5,3 +5,5 @@
 3. Quiero crear pantalla de carrito y contacto del ecommerce
 
 4. Maquetar con los estilos principales header, catalogo, nav y footer
+
+5. Agregar imágenes a los productos, alinear los textos y productos.

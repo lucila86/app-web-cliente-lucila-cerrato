@@ -6,84 +6,131 @@
     <meta name="description" content="Catálogo de productos Apple: MacBook, iPhone, iPad, Apple Watch y más.">
     <title>Apple Store | Catálogo de Productos</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header>
-        <h1>Apple Store</h1>
-        <nav aria-label="Navegación principal">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="#ofertas">Ofertas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1><a href="#inicio" style="color: var(--primary-blue); text-decoration: none;">Apple Store</a></h1>
+            
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#ofertas">Ofertas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos..." class="search-input" aria-label="Buscar productos">
+                </div>
+                <a href="#" class="cart-link" aria-label="Carrito de compras">
+                    <div style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="21" r="1"></circle>
+    <circle cx="20" cy="21" r="1"></circle>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+  </svg>
+  <span style="font-weight: bold; font-size: 16px;">0</span>
+</div>
+                </a>
+            </div>
+        </div>
     </header>
 
     <main id="inicio">
 
-        <aside aria-label="Filtros de categorías">
-            <h2>Categorías</h2>
-            <nav aria-label="Filtros de productos">
-                <ul>
-                    <li><a href="#catalogo">Todos los productos</a></li>
-                    <li><a href="#macbook">MacBook</a></li>
-                    <li><a href="#iphone">iPhone</a></li>
-                    <li><a href="#ipad">iPad</a></li>
-                    <li><a href="#watch">Apple Watch</a></li>
-                    <li><a href="#airpods">AirPods</a></li>
-                    <li><a href="#accesorios">Accesorios</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <div class="main-container">
+            <!-- Columna izquierda: Menú de Categorías -->
+            <aside aria-label="Filtros de categorías">
+                <h2>Categorías</h2>
+                <nav aria-label="Filtros de productos">
+                    <ul>
+                        <li><a href="#catalogo">Todos los productos</a></li>
+                        <li><a href="#macbook">MacBook</a></li>
+                        <li><a href="#iphone">iPhone</a></li>
+                        <li><a href="#ipad">iPad</a></li>
+                        <li><a href="#watch">Apple Watch</a></li>
+                        <li><a href="#airpods">AirPods</a></li>
+                        <li><a href="#accesorios">Accesorios</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-        <section id="catalogo" aria-label="Catálogo de productos">
-            <h2>Catálogo de productos</h2>
+            <!-- Columna derecha: Contenido del catálogo -->
+            <div class="catalog-column">
+                <!-- Título del catálogo -->
+                <h2 class="section-title">Catálogo de productos</h2>
 
-            <article id="macbook">
-                <h3><a href="producto.html">MacBook Air M3</a></h3>
-                <p>Notebook ultradelgado con chip M4, 13 pulgadas.</p>
-                <p>Precio: $1.199.000</p>
-                <p><a href="producto.html" aria-label="Ver detalle de MacBook Air M3">Ver detalle &rarr;</a></p>
+                <!-- Grid de productos -->
+                <section id="catalogo" aria-label="Catálogo de productos">
+<article id="macbook">
+                <img src="img/apple-macbook.jpg" alt="MacBook Air M3" class="product-image">
+                <div class="product-info">
+                    <h3><a href="producto.html?id=macbook">MacBook Air M3</a></h3>
+                    <p>Notebook ultradelgado con chip M4, 13 pulgadas.</p>
+                    <p>Precio: $1.199.000</p>
+                    <a href="producto.html?id=macbook" aria-label="Ver detalle de MacBook Air M3">Ver detalle</a>
+                </div>
             </article>
 
             <article id="iphone">
-                <h3><a href="producto.html">iPhone 15 Pro</a></h3>
-                <p>Smartphone con chip A17 Pro, cámara de 48MP y titanio.</p>
-                <p>Precio: $1.599.000</p>
-                <p><a href="producto.html" aria-label="Ver detalle de iPhone 15 Pro">Ver detalle &rarr;</a></p>
+                <img src="img/iphone.jpg" alt="iPhone 15 Pro" class="product-image">
+                <div class="product-info">
+                    <h3><a href="producto.html?id=iphone">iPhone 15 Pro</a></h3>
+                    <p>Smartphone con chip A17 Pro, cámara de 48MP y titanio.</p>
+                    <p>Precio: $1.599.000</p>
+                    <a href="producto.html?id=iphone" aria-label="Ver detalle de iPhone 15 Pro">Ver detalle</a>
+                </div>
             </article>
 
             <article id="ipad">
-                <h3><a href="producto.html">iPad Air</a></h3>
-                <p>Tablet con chip M2, pantalla Liquid Retina de 11 pulgadas.</p>
-                <p>Precio: $999.000</p>
-                <p><a href="producto.html" aria-label="Ver detalle de iPad Air">Ver detalle &rarr;</a></p>
+                <img src="img/ipad-air.jpg" alt="iPad Air" class="product-image">
+                <div class="product-info">
+                    <h3><a href="producto.html?id=ipad">iPad Air</a></h3>
+                    <p>Tablet con chip M2, pantalla Liquid Retina de 11 pulgadas.</p>
+                    <p>Precio: $999.000</p>
+                    <a href="producto.html?id=ipad" aria-label="Ver detalle de iPad Air">Ver detalle</a>
+                </div>
             </article>
 
             <article id="watch">
-                <h3><a href="producto.html">Apple Watch Series 9</a></h3>
-                <p>Reloj inteligente con GPS y detección de accidentes.</p>
-                <p>Precio: $549.000</p>
-                <p><a href="producto.html" aria-label="Ver detalle de Apple Watch Series 9">Ver detalle &rarr;</a></p>
+                <img src="img/apple-watch.jpg" alt="Apple Watch Series 9" class="product-image">
+                <div class="product-info">
+                    <h3><a href="producto.html?id=watch">Apple Watch Series 9</a></h3>
+                    <p>Reloj inteligente con GPS y detección de accidentes.</p>
+                    <p>Precio: $549.000</p>
+                    <a href="producto.html?id=watch" aria-label="Ver detalle de Apple Watch Series 9">Ver detalle</a>
+                </div>
             </article>
 
             <article id="airpods">
-                <h3><a href="producto.html">AirPods Pro 2</a></h3>
-                <p>Auriculares inalámbricos con cancelación activa de ruido.</p>
-                <p>Precio: $349.000</p>
-                <p><a href="producto.html" aria-label="Ver detalle de AirPods Pro 2">Ver detalle &rarr;</a></p>
+                <img src="img/airpods-pro2.jpg" alt="AirPods Pro 2" class="product-image">
+                <div class="product-info">
+                    <h3><a href="producto.html?id=airpods">AirPods Pro 2</a></h3>
+                    <p>Auriculares inalámbricos con cancelación activa de ruido.</p>
+                    <p>Precio: $349.000</p>
+                    <a href="producto.html?id=airpods" aria-label="Ver detalle de AirPods Pro 2">Ver detalle</a>
+                </div>
             </article>
 
             <article id="accesorios">
-                <h3><a href="producto.html">Magic Mouse</a></h3>
-                <p>Mouse inalámbrico recargable con Multi-Touch.</p>
-                <p>Precio: $129.000</p>
-                <p><a href="producto.html" aria-label="Ver detalle de Magic Mouse">Ver detalle &rarr;</a></p>
+                <img src="img/magic-mouse.jpg" alt="Magic Mouse" class="product-image">
+                <div class="product-info">
+                    <h3><a href="producto.html?id=accesorios">Magic Mouse</a></h3>
+                    <p>Mouse inalámbrico recargable con Multi-Touch.</p>
+                    <p>Precio: $129.000</p>
+                    <a href="producto.html?id=accesorios" aria-label="Ver detalle de Magic Mouse">Ver detalle</a>
+                </div>
             </article>
 
-        </section>
+                </section>
+            </div>
+        </div>
 
     </main>
 

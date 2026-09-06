@@ -43,14 +43,14 @@ header {
 
 header .container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 70px;
     max-width: var(--max-width);
     padding: 0 1rem;
     margin: 0 auto;
-    align-items: center;
 }
 
-/* Logo a la izquierda */
 header h1 {
     font-size: 1.8rem;
     font-weight: 700;
@@ -63,57 +63,13 @@ header h1 a {
     text-decoration: none;
 }
 
-/* Menú principal centrado */
-header nav {
-    flex: 1;
-    text-align: center;
-    margin: 0 2rem;
-}
-
-header nav ul {
-    display: inline-flex;
-    list-style: none;
-    gap: 1.5rem;
-    padding: 0;
-    margin: 0;
-}
-
-header nav a {
-    font-weight: 500;
-    color: var(--text-dark);
-    font-size: 0.95rem;
-    position: relative;
-    transition: color var(--transition);
-    text-decoration: none;
-}
-
-header nav a:hover {
-    color: var(--primary-blue);
-}
-
-header nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-blue);
-    transition: width var(--transition);
-}
-
-header nav a:hover::after {
-    width: 100%;
-}
-
-/* Acciones del header (buscador + carrito) a la derecha */
+/* Header actions (search + cart) */
 .header-actions {
     display: flex;
-    align-items: center;
     gap: 1.5rem;
+    align-items: center;
 }
 
-/* Buscador */
 .search-box {
     display: flex;
     align-items: center;
@@ -125,18 +81,17 @@ header nav a:hover::after {
     border-radius: var(--radius);
     font-family: inherit;
     font-size: 0.9rem;
-    width: 200px;
+    width: 250px;
     transition: var(--transition);
 }
 
 .search-input:focus {
     outline: none;
     border-color: var(--primary-blue);
-    width: 250px;
+    width: 300px;
     box-shadow: 0 0 0 3px var(--blue-light);
 }
 
-/* Carrito */
 .cart-link {
     display: flex;
     align-items: center;
@@ -167,7 +122,7 @@ header nav a:hover::after {
     padding: 0 1rem;
 }
 
-/* Sidebar de Categorías */
+/* Sidebar de CategorÃ­as */
 aside {
     background-color: var(--white);
     padding: 20px;
@@ -202,12 +157,12 @@ aside nav a:hover {
     padding-left: 8px;
 }
 
-/* Columna derecha del catálogo */
+/* Columna derecha del catÃ¡logo */
 .catalog-column {
     width: 100%;
 }
 
-/* Título de la sección principal */
+/* TÃ­tulo de la secciÃ³n principal */
 .section-title {
     text-align: center;
     margin-bottom: 2rem;
@@ -228,7 +183,7 @@ aside nav a:hover {
     margin-top: 0;
 }
 
-/* Asegurar que el título no afecte el grid */
+/* Asegurar que el tÃ­tulo no afecte el grid */
 #catalogo > article {
     background-color: var(--white);
     border-radius: var(--radius);
@@ -264,23 +219,7 @@ article h3 a {
     text-decoration: none;
 }
 
-/* Bloque de texto del producto - alineación limpia a la izquierda */
-.product-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-blue);
-    margin: 1.5rem 0 1rem 0;
-    line-height: 1.2;
-}
-
-.product-desc {
-    font-size: 1rem;
-    color: var(--text-light);
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Enlaces de acción de los productos */
+/* Quitar el estilo de botÃ³n azul de los enlaces de acciÃ³n */
 article a {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -297,70 +236,6 @@ article a {
 article a:hover {
     background-color: var(--blue-dark);
     transform: translateY(-2px);
-}
-
-/* Estilo de la tabla de especificaciones */
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: 2rem 0;
-    background-color: var(--white);
-    border-radius: var(--radius);
-    overflow: hidden;
-}
-
-caption {
-    padding: 1rem 0;
-    color: var(--primary-blue);
-    font-size: 1.2rem;
-    text-align: left;
-}
-
-thead {
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
-
-thead th {
-    padding: 1rem 1.5rem;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-}
-
-tbody tr {
-    border-bottom: 1px solid var(--silver-light);
-}
-
-tbody tr:nth-child(odd) {
-    background-color: var(--silver-light);
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--white);
-}
-
-tbody td {
-    padding: 1rem 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-dark);
-}
-
-tbody td:first-child {
-    color: var(--primary-blue);
-    font-weight: 500;
-    width: 40%;
-}
-
-tbody td:last-child {
-    width: 60%;
-}
-
-/* Hover effects en filas */
-tbody tr:hover {
-    background-color: var(--silver-light);
-    transition: background-color 0.3s ease;
 }
 
 /* Hover effects on product cards */
@@ -421,7 +296,7 @@ footer nav a:hover {
     }
 
     aside {
-        order: -1; /* Sidebar arriba en móviles */
+        order: -1; /* Sidebar arriba en mÃ³viles */
     }
 
     .search-input {
